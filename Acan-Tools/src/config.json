@@ -1,0 +1,15 @@
+{
+    "urls": {
+        "Acan-Tools": "http://localhost:1537",
+        "ACan-Server": "http://localhost: 1537"
+    },
+    "others": {
+        "toolList": [
+            "Translate",
+            "Key",
+            "Md5",
+            "RandomUser",
+            "RandomPassword"
+        ]
+    }
+}

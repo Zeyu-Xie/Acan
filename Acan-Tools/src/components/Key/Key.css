@@ -1,0 +1,15 @@
+#id5 {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    height: fit-content;
+    background-color: rgba(255,255 , 255, 0.4);
+    max-width: 50rem;
+}
+
+#id5 textarea {
+    background-color: rgba(255,255 , 255, 0.4);
+}
