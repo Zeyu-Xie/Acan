@@ -15,7 +15,7 @@ class App extends React.Component {
                             </svg>
                         </a>
 
-                        <a className="navbar-brand" href="#" style={{ color: "rgba(255,255,255,0.55)" }}>Acan Home</a>
+                        <a className="navbar-brand" href="#" style={{ color: "rgba(255,255,255,0.55)" }}>Acan-Home</a>
 
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
@@ -109,7 +109,7 @@ class App extends React.Component {
                         </p>
 
                         <h1 className="text-center mb-4" style={{ color: "rgba(255,255,255,0.55)" }}>
-                            Welcome to Acan Home
+                            Welcome to Acan-Home
                         </h1>
 
                         <p className="lead text-center mb-5" style={{ color: "rgba(255,255,255,0.55)" }}>
