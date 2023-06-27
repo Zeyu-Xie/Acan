@@ -1,0 +1,10 @@
+.card {
+    opacity: 0.7;
+    min-width: max-content;
+}
+
+.spinner-border {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+}
