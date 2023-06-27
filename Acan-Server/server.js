@@ -12,10 +12,10 @@ const config = require("./config.json")
 
 const app = express()
 
-app.use(express.static("../Acan Home/build"))
-app.use(express.static("../Acan Docs/build"))
-app.use(express.static("../Acan Photos/build"))
-app.use(express.static("../Acan Tools/build"))
+app.use(express.static("../Acan-Home/build"))
+app.use(express.static("../Acan-Docs/build"))
+app.use(express.static("../Acan-Photos/build"))
+app.use(express.static("../Acan-Tools/build"))
 
 app.use(bodyParser.json())
 app.use(bodyParser.text())
@@ -36,22 +36,22 @@ app.use("/", tool)
 
 app.get("/page/home",(req,res)=>{
   res.setHeader("Content-Type", "text/html")
-  res.sendFile(path.join(__dirname, "../Acan Home/build/index.html"));
+  res.sendFile(path.join(__dirname, "../Acan-Home/build/index.html"));
 })
 
 app.get("/page/doc",(req,res)=>{
   res.setHeader("Content-Type", "text/html")
-  res.send(fs.readFileSync("../Acan Docs/build/index.html"))
+  res.send(fs.readFileSync("../Acan-Docs/build/index.html"))
 })
 
 app.get("/page/photo",(req,res)=>{
   res.setHeader("Content-Type", "text/html")
-  res.send(fs.readFileSync("../Acan Photos/build/index.html"))
+  res.send(fs.readFileSync("../Acan-Photos/build/index.html"))
 })
 
 app.get("/page/tool",(req,res)=>{
   res.setHeader("Content-Type", "text/html")
-  res.send(fs.readFileSync("../Acan Tools/build/index.html"))
+  res.send(fs.readFileSync("../Acan-Tools/build/index.html"))
 })
 
 app.listen(config.port, () => {
