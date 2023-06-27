@@ -1,0 +1,12 @@
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#id1 {
+    width: 100vw;
+    height: 100vh;
+}
+
+#id1>.row {
+    height: 100%;
+}

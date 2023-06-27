@@ -1,0 +1,7 @@
+#root {
+    background-image: url("./forest.jpg");
+    background-size: cover;
+    background-position-x: right;
+    background-position-y: top;
+    background-attachment: fixed
+}
