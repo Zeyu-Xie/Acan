@@ -1,5 +1,5 @@
 {
-    "port": 1537,
+    "port": 80,
     "apiKeys": {
         "tencentDeveloper": {
             "secretId": "AKIDrY2oMgmdGfqmTwAAKGyRffQxFJ8j5dw1",

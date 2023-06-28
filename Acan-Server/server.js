@@ -3,7 +3,6 @@ const fs=require("fs")
 const bodyParser = require("body-parser")
 const path = require("path")
 
-// const account = require("./account/account")
 const doc = require("./doc/doc")
 const photo = require("./photo/photo")
 const tool = require("./tool/tool")
@@ -29,7 +28,6 @@ app.all('*', function (req, res, next) {
 })
 
 
-// app.use("/", account)
 app.use("/", doc)
 app.use("/", photo)
 app.use("/", tool)

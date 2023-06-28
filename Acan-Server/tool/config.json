@@ -1,6 +1,6 @@
 {
     "test": {
-        "port": 1537
+        "port": 80
     },
     "apiKeys": {
         "apiNinjas": {
