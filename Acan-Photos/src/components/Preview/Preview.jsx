@@ -49,7 +49,7 @@ class Preview extends React.Component {
                                 if (item.Key === this.props.imageName) {
                                     return (
                                         <div className="carousel-item active">
-                                            <img src={`${config.urls["Acan-Photos"]}/photo/api/previewPhoto?name=${item.Key}`} alt={item.Key} />
+                                            <img src={`${config.urls["Acan Server"]}/photo/api/previewPhoto?name=${item.Key}`} alt={item.Key} />
                                             <div className="carousel-caption d-none d-md-block">
                                                 <h5>{item.Key}</h5>
                                             </div>
@@ -59,7 +59,7 @@ class Preview extends React.Component {
                                 else {
                                     return (
                                         <div className="carousel-item">
-                                            <img src={`${config.urls["Acan-Photos"]}/photo/api/previewPhoto?name=${item.Key}`} alt={item.Key} />
+                                            <img src={`${config.urls["Acan Server"]}/photo/api/previewPhoto?name=${item.Key}`} alt={item.Key} />
                                             <div className="carousel-caption d-none d-md-block" style={{ color: "white", zIndex: "2" }}>
                                                 <h5>{item.Key}</h5>
                                             </div>

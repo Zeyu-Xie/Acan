@@ -1,7 +1,6 @@
 {
-    "port": 80,
     "urls": {
-        "Acan-Photos": "http://localhost:1537"
+        "Acan Server": "http://localhost"
     },
     "apiKeys": {
         "tencentDeveloper": {
