@@ -66,7 +66,7 @@ class Key extends React.Component {
         this.setState({
             loading_visibility: "visible"
         })
-        await axios.get(`${config.urls["Acan-Tools"]}/tool/api/getKeyPair?encryptionType=${str}`).then(res => {
+        await axios.get(`${config.urls["Acan Server"]}/tool/api/getKeyPair?encryptionType=${str}`).then(res => {
             this.setState({
                 publicKey: res.data.publicKey,
                 privateKey: res.data.privateKey,

@@ -87,7 +87,7 @@ class RandomPassword extends React.Component {
             })
         }
         else {
-            axios.get(`${config.urls["Acan-Tools"]}/tool/api/getRandomPassword?length=${this.q.current.value}`).then(res => {
+            axios.get(`${config.urls["Acan Server"]}/tool/api/getRandomPassword?length=${this.q.current.value}`).then(res => {
                 this.setState({
                     o_default: res.data.default,
                     o_numberRemoved: res.data.numberRemoved,

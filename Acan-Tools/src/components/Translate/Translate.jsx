@@ -55,7 +55,7 @@ class Translate extends React.Component {
         }
 
         else {
-            axios.post(`${config.urls["Acan-Tools"]}/tool/api/translate?from=${from}&to=${to}`, {
+            axios.post(`${config.urls["Acan Server"]}/tool/api/translate?from=${from}&to=${to}`, {
                 q: q
             }).then(res => {
                 this.setState({

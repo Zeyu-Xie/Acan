@@ -60,7 +60,7 @@ class Md5 extends React.Component {
             })
         }
         else {
-            axios.post(`${config.urls["Acan-Tools"]}/tool/api/getMd5`, {
+            axios.post(`${config.urls["Acan Server"]}/tool/api/getMd5`, {
                 q: str
             }).then(res => {
                 this.setState({

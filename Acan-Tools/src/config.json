@@ -1,7 +1,6 @@
 {
     "urls": {
-        "Acan-Tools": "http://localhost:1537",
-        "ACan-Server": "http://localhost: 1537"
+        "Acan Server": "http://localhost"
     },
     "others": {
         "toolList": [

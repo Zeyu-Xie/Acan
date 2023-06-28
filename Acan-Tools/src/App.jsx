@@ -44,7 +44,7 @@ class App extends React.Component {
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
-                                    <a className="nav-link" href={config.urls["ACan-Server"]}><b>Home</b></a>
+                                    <a className="nav-link" href={`${config.urls["Acan Server"]}/page/home`}><b>Home</b></a>
                                 </li>
                                 {
                                     (this.state.toolList) ? (

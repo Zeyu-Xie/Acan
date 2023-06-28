@@ -65,7 +65,7 @@ class RandomUser extends React.Component {
     }
 
     getRandomUser = () => {
-        axios.get(`${config.urls["Acan-Tools"]}/tool/api/getRandomUser`).then(res => {
+        axios.get(`${config.urls["Acan Server"]}/tool/api/getRandomUser`).then(res => {
             this.setState(res.data)
         }).catch(err => {
             console.log("ERROR", err)
