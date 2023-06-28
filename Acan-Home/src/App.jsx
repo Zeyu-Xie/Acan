@@ -2,6 +2,8 @@ import React from "react"
 
 import "./App.css"
 
+import config from "./config.json"
+
 class App extends React.Component {
     render() {
         return (
@@ -10,14 +12,14 @@ class App extends React.Component {
                     <div className="container">
 
                         <a className="navbar-brand" href="#">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-signpost-split" viewBox="0 0 16 16" style={{ color: "rgba(255,255,255,0.55)" }}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-signpost-split" viewBox="0 0 16 16" >
                                 <path d="M7 7V1.414a1 1 0 0 1 2 0V2h5a1 1 0 0 1 .8.4l.975 1.3a.5.5 0 0 1 0 .6L14.8 5.6a1 1 0 0 1-.8.4H9v10H7v-5H2a1 1 0 0 1-.8-.4L.225 9.3a.5.5 0 0 1 0-.6L1.2 7.4A1 1 0 0 1 2 7h5zm1 3V8H2l-.75 1L2 10h6zm0-5h6l.75-1L14 3H8v2z" />
                             </svg>
                         </a>
 
-                        <a className="navbar-brand" href="#" style={{ color: "rgba(255,255,255,0.55)" }}>Acan-Home</a>
+                        <a className="navbar-brand" href="#" >Acan-Home</a>
 
-                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
 
@@ -25,27 +27,27 @@ class App extends React.Component {
 
 
 
-                            <ul className="navbar-nav" style={{ marginLeft: "4rem", marginRight: "auto" }}>
+                            <ul className="navbar-nav" style={{marginRight: "auto" }}>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#" id="navbarHome" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <a className="nav-link" href={`${config.urls["Acan Server"]}/page/home`} id="navbarHome" role="button" aria-haspopup="true" aria-expanded="false">
                                         Home
                                     </a>
                                 </li>
 
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#" id="navbarLandings" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <a className="nav-link" href={`${config.urls["Acan Server"]}/page/doc`} id="navbarLandings" role="button" aria-haspopup="true" aria-expanded="false">
                                         Doc
                                     </a>
                                 </li>
 
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#" id="navbarLandings" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <a className="nav-link" href={`${config.urls["Acan Server"]}/page/photo`} id="navbarLandings" role="button" aria-haspopup="true" aria-expanded="false">
                                         Photo
                                     </a>
                                 </li>
 
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#" id="navbarLandings" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <a className="nav-link" href={`${config.urls["Acan Server"]}/page/tool`} id="navbarLandings" role="button" aria-haspopup="true" aria-expanded="false">
                                         Tool
                                     </a>
                                 </li>
@@ -104,20 +106,20 @@ class App extends React.Component {
                 <div className="row justify-content-center align-items-center">
                     <div className="col-md-8 col-lg-7">
 
-                        <p className="font-weight-medium text-center text-xs text-uppercase" style={{ color: "rgba(255,255,255,0.55)" }}>
+                        <p className="font-weight-medium text-center text-xs text-uppercase" >
                             by Acan Xie
                         </p>
 
-                        <h1 className="text-center mb-4" style={{ color: "rgba(255,255,255,0.55)" }}>
+                        <h1 className="text-center mb-4" >
                             Welcome to Acan-Home
                         </h1>
 
-                        <p className="lead text-center mb-5" style={{ color: "rgba(255,255,255,0.55)" }}>
+                        <p className="lead text-center mb-5" >
                         This is the space where I demonstrate my keen interest and unwavering passion.
                         </p>
 
-                        <p className="text-center mb-0" style={{ color: "rgba(255,255,255,0.55)" }}>
-                            <a href="#" className="btn btn-outline-secondary" style={{ color: "rgba(255,255,255,0.55)", background: "none", borderColor: "rgba(255,255,255,0.55)" }}>
+                        <p className="text-center mb-0" >
+                            <a href="#" className="btn btn-outline-secondary" style={{ color: "rgba(255,255,255,0.75)", background: "none", borderColor: "rgba(255,255,255,0.75)" }}>
                                 Explore Now
                             </a>
                         </p>
