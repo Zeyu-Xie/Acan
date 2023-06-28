@@ -1,6 +1,6 @@
 {
     "urls": {
-        "Acan-Docs": "http://localhost:1537"
+        "Acan Server": "http://localhost"
     },
     "apiKeys": {
         "tencentDeveloper": {

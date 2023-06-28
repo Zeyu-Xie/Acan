@@ -196,7 +196,7 @@ class Preview extends React.Component {
 
     async getList() {
         this.loading()
-        await axios(`${config.urls["Acan-Docs"]}/doc/api/getList`).then(res => {
+        await axios(`${config.urls["Acan Server"]}/doc/api/getList`).then(res => {
             this.setState({
                 list: res.data.Contents
             })
@@ -208,7 +208,7 @@ class Preview extends React.Component {
 
     async getDoc() {
         this.loading()
-        await axios.get(`${config.urls["Acan-Docs"]}/doc/content/getDoc?name=${this.state.docName}`).then(res => {
+        await axios.get(`${config.urls["Acan Server"]}/doc/content/getDoc?name=${this.state.docName}`).then(res => {
             this.setState({
                 content: res.data.data
             })
@@ -218,7 +218,7 @@ class Preview extends React.Component {
 
     async downloadDoc() {
         this.loading()
-        await axios.get(`${config.urls["Acan-Docs"]}/doc/content/downloadDoc?name=${this.state.docName}`).catch(err => {
+        await axios.get(`${config.urls["Acan Server"]}/doc/content/downloadDoc?name=${this.state.docName}`).catch(err => {
             console.log("ERROR", err)
         })
         this.loaded()
@@ -241,7 +241,7 @@ class Preview extends React.Component {
             var str = prompt("Please enter new name")
             if (str !== null) {
                 this.loading()
-                await axios.get(`${config.urls["Acan-Docs"]}/doc/api/renameDoc?oldName=${this.state.docName}&newName=${str}`).then(res => {
+                await axios.get(`${config.urls["Acan Server"]}/doc/api/renameDoc?oldName=${this.state.docName}&newName=${str}`).then(res => {
                     this.setState({
                         docName: str
                     })
@@ -262,7 +262,7 @@ class Preview extends React.Component {
         else {
             const confirmed = window.confirm("Are you sure you want to delete this document?")
             if (confirmed) {
-                await axios.get(`${config.urls["Acan-Docs"]}/doc/api/deleteDoc?name=${this.state.docName}`).then(res => {
+                await axios.get(`${config.urls["Acan Server"]}/doc/api/deleteDoc?name=${this.state.docName}`).then(res => {
                     this.setState({
                         docName: "Self Introduction.html"
                     })
@@ -273,7 +273,7 @@ class Preview extends React.Component {
     }
 
     download() {
-        axios.get(`${config.urls["Acan-Docs"]}/doc/content/downloadDoc?name=${this.state.docName}`).then(res => {
+        axios.get(`${config.urls["Acan Server"]}/doc/content/downloadDoc?name=${this.state.docName}`).then(res => {
             download(res.data, this.state.docName, "text/html")
         }).catch(err => {
             console.log("ERROR", err)
@@ -287,7 +287,7 @@ class Preview extends React.Component {
             var file = this.ref3.current.files[i]
             const formData = new FormData();
             formData.append("file", file);
-            await axios.post(`${config.urls["Acan-Docs"]}/doc/api/uploadDoc`, formData).catch(err => {
+            await axios.post(`${config.urls["Acan Server"]}/doc/api/uploadDoc`, formData).catch(err => {
                 console.log("ERROR", err)
             })
             await this.refresh()
