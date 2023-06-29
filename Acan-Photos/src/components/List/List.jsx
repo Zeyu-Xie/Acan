@@ -75,7 +75,7 @@ class List extends React.Component {
                                                     </button>
 
                                                     &nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <a className="btn btn-outline-success btn-sm" href={`${config.urls["Acan Server"]}/downloadPhoto?name=${item.Key}`} title="Download">
+                                                    <a className="btn btn-outline-success btn-sm" href={`${config.urls["Acan Server"]}/photo/api/downloadPhoto?name=${item.Key}`} title="Download">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" className="bi bi-download" viewBox="0 0 16 16">
                                                             <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
                                                             <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
@@ -93,7 +93,7 @@ class List extends React.Component {
                                                     </button>
 
                                                     &nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <button className="btn btn-outline-success btn-sm" onClick={() => { copy(`${config.urls["Acan Server"]}/downloadPhoto?name=${item.Key}`) }} title="Copy Link">
+                                                    <button className="btn btn-outline-success btn-sm" onClick={() => { copy(`${config.urls["Acan Server"]}/photo/api/downloadPhoto?name=${item.Key}`) }} title="Copy Link">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" className="bi bi-clipboard-plus" viewBox="0 0 16 16">
                                                             <path fill-rule="evenodd" d="M8 7a.5.5 0 0 1 .5.5V9H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V10H6a.5.5 0 0 1 0-1h1.5V7.5A.5.5 0 0 1 8 7z" />
                                                             <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
