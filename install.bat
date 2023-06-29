@@ -3,37 +3,37 @@
 set "DIRS=Acan-Photos Acan-Tools Acan-Docs Acan-Home Acan-Server/Doc Acan-Server/Tool Acan-Server/Photo Acan-Server"
 set "BUILD_DIRS=Acan-Photos Acan-Tools Acan-Docs Acan-Home"
 
-:all
-call :install
-exit /b
+if "%~1"=="build" (
+    call :build
+) else if "%~1"=="clear" (
+    call :clear
+) else if "%~1"=="install" (
+    call :install
+)
 
 :install
 for %%d in (%DIRS%) do (
     echo Installing dependencies in %%d
-    cd %%d
+    cd /d %%d
     npm i
-    cd ..
+    cd /d %~dp0
 )
-exit /b
+exit
 
 :build
 for %%d in (%BUILD_DIRS%) do (
     echo Building in %%d
-    cd %%d
+    cd /d %%d
     npm run build
-    cd ..
+    cd /d %~dp0
 )
-exit /b
+exit
 
-:clear
+:clear 
 for %%d in (%DIRS%) do (
     echo Deleting node_modules in %%d
-    cd %%d
+    cd /d %%d
     rd /s /q node_modules
-    cd ..
+    cd /d %~dp0
 )
-exit /b
-
-:usage
-echo Invalid argument. Usage: script.bat [all^|install^|build^|clear]
-exit /b
+exit
