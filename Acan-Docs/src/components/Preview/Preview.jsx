@@ -76,7 +76,7 @@ class Preview extends React.Component {
                                 </li>
 
                                 <li className="nav-item">
-                                    <a className="nav-link" href="http://acanxie.com">Home</a>
+                                    <a className="nav-link" href="http://localhost">Home</a>
                                 </li>
 
                                 <li className="nav-item dropdown">
