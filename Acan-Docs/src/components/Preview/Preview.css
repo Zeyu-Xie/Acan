@@ -2,21 +2,11 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-body {
-    margin-right: 1rem;
-    margin-left: 1rem;
-}
-
-#div2 {
-    padding: 2rem 1rem 2rem 1rem;
-}
-
-#div2 .container {
+#preview-content .container {
     background-color: rgba(255, 255, 255, 0.4);
     border-color: rgba(0, 0, 0, 0.1);
     border-width: 1px;
     border-style: solid;
-    padding: 2rem 5rem 2rem 5rem;
 }
 
 .spinner-border {

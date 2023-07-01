@@ -19,7 +19,7 @@ class Preview extends React.Component {
 
     ref1 = React.createRef()
     ref2 = React.createRef()
-    ref3= React.createRef()
+    ref3 = React.createRef()
 
     constructor(props) {
         super(props)
@@ -37,10 +37,10 @@ class Preview extends React.Component {
     render() {
         return (
             <div id="div1">
-                <nav className="navbar navbar-expand-lg bg-body-tertiary">
+                <nav className="navbar navbar-expand-lg">
                     <div className="container-fluid">
-                        <a className="navbar-brand align-items-center" href="#">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-card-text" viewBox="0 0 16 16">
+                        <a className="navbar-brand mx-4 py-2" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-card-text" viewBox="0 0 16 16">
                                 <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
                                 <path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z" />
                             </svg>
@@ -49,6 +49,24 @@ class Preview extends React.Component {
                             <span className="navbar-toggler-icon"></span>
                         </button>
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+
+                                <li className="nav-item">
+                                    <a className="nav-link" href="http://acanxie.com/page/home">Home</a>
+                                </li>
+
+                                <li className="nav-item">
+                                    <a className="nav-link" href="http://acanxie.com/page/doc">Docs</a>
+                                </li>
+
+                                <li className="nav-item">
+                                    <a className="nav-link" href="http://acanxie.com/page/photo">Photos</a>
+                                </li>
+
+                                <li className="nav-item">
+                                    <a className="nav-link" href="http://acanxie.com/page/tool">Tools</a>
+                                </li>
+                            </ul>
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
                                 <li className="nav-item dropdown">
@@ -73,10 +91,6 @@ class Preview extends React.Component {
                                             })) : (null)
                                         }
                                     </ul>
-                                </li>
-
-                                <li className="nav-item">
-                                    <a className="nav-link" href="http://acanxie.com">Home</a>
                                 </li>
 
                                 <li className="nav-item dropdown">
@@ -122,7 +136,7 @@ class Preview extends React.Component {
                                         <li>
                                             <div className="input-group" style={{ width: "max-content" }}>
                                                 &nbsp;&nbsp;
-                                                <input type="file" className="form-control" multiple ref={this.ref3}/>
+                                                <input type="file" className="form-control" multiple ref={this.ref3} />
                                                 <label className="input-group-text" onClick={this.upload}>Upload ⏫</label>
                                                 &nbsp;&nbsp;
                                             </div>
@@ -169,8 +183,8 @@ class Preview extends React.Component {
                     </div >
                 </nav >
 
-                <div id="div2">
-                    <div className="container" ref={this.ref1}>
+                <div id="preview-content" className="py-4 px-3">
+                    <div className="container py-4 px-md-5 px-4" ref={this.ref1}>
                         <div dangerouslySetInnerHTML={{ __html: this.state.content }}></div>
                     </div>
                 </div>
