@@ -37,6 +37,41 @@ class List extends React.Component {
     render() {
         return (
             <div className="row justify-content-center">
+                <ul id="navbar">
+                    <li>
+                        <div title="Home" className="shake-chunk" onClick={() => { window.location.href = "http://acanxie.com/page/home" }}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-house" viewBox="0 0 16 16">
+                                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z" />
+                            </svg>
+                        </div>
+                    </li>
+                    <li>
+                        <div title="Doc" className="shake-chunk" onClick={() => { window.location.href = "http://acanxie.com/page/doc" }}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-file-earmark-text" viewBox="0 0 16 16">
+                                <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
+                                <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
+                            </svg>
+                        </div>
+
+                    </li>
+                    <li>
+                        <div title="Photo" className="shake-chunk" onClick={() => { window.location.href = "#" }}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-images" viewBox="0 0 16 16">
+                                <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                                <path d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z" />
+                            </svg>
+                        </div>
+
+                    </li>
+                    <li>
+                        <div title="Tool" className="shake-chunk" onClick={() => { window.location.href = "http://acanxie.com/page/tool" }}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-wrench-adjustable" viewBox="0 0 16 16">
+                                <path d="M16 4.5a4.492 4.492 0 0 1-1.703 3.526L13 5l2.959-1.11c.027.2.041.403.041.61Z" />
+                                <path d="M11.5 9c.653 0 1.273-.139 1.833-.39L12 5.5 11 3l3.826-1.53A4.5 4.5 0 0 0 7.29 6.092l-6.116 5.096a2.583 2.583 0 1 0 3.638 3.638L9.908 8.71A4.49 4.49 0 0 0 11.5 9Zm-1.292-4.361-.596.893.809-.27a.25.25 0 0 1 .287.377l-.596.893.809-.27.158.475-1.5.5a.25.25 0 0 1-.287-.376l.596-.893-.809.27a.25.25 0 0 1-.287-.377l.596-.893-.809.27-.158-.475 1.5-.5a.25.25 0 0 1 .287.376ZM3 14a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" />
+                            </svg>
+                        </div>
+                    </li>
+                </ul>
                 <div className="card col-11 col-lg-10">
                     <div className="card-body">
                         <table className="table table-hover">
@@ -65,7 +100,7 @@ class List extends React.Component {
                                                 <td>{item.LastModified}</td>
                                                 <td>{item.size}</td>
                                                 <td>
-                                                    <button className="btn btn-outline-success btn-sm" title="view" onClick={()=>{
+                                                    <button className="btn btn-outline-success btn-sm my-2" title="view" onClick={() => {
                                                         this.preview(item)
                                                     }}>
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" className="bi bi-eye" viewBox="0 0 16 16">
@@ -75,7 +110,7 @@ class List extends React.Component {
                                                     </button>
 
                                                     &nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <a className="btn btn-outline-success btn-sm" href={`${config.urls["Acan Server"]}/photo/api/downloadPhoto?name=${item.Key}`} title="Download">
+                                                    <a className="btn btn-outline-success btn-sm my-2" href={`${config.urls["Acan Server"]}/photo/api/downloadPhoto?name=${item.Key}`} title="Download">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" className="bi bi-download" viewBox="0 0 16 16">
                                                             <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
                                                             <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
@@ -83,7 +118,7 @@ class List extends React.Component {
                                                     </a>
 
                                                     &nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <button className="btn btn-outline-success btn-sm" onClick={() => {
+                                                    <button className="btn btn-outline-success btn-sm my-2" onClick={() => {
                                                         this.rename(item.Key)
                                                     }} title="Rename">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" className="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -93,7 +128,7 @@ class List extends React.Component {
                                                     </button>
 
                                                     &nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <button className="btn btn-outline-success btn-sm" onClick={() => { copy(`${config.urls["Acan Server"]}/photo/api/downloadPhoto?name=${item.Key}`) }} title="Copy Link">
+                                                    <button className="btn btn-outline-success btn-sm my-2" onClick={() => { copy(`${config.urls["Acan Server"]}/photo/api/downloadPhoto?name=${item.Key}`) }} title="Copy Link">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" className="bi bi-clipboard-plus" viewBox="0 0 16 16">
                                                             <path fill-rule="evenodd" d="M8 7a.5.5 0 0 1 .5.5V9H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V10H6a.5.5 0 0 1 0-1h1.5V7.5A.5.5 0 0 1 8 7z" />
                                                             <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
@@ -102,7 +137,7 @@ class List extends React.Component {
                                                     </button>
 
                                                     &nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <button className="btn btn-outline-danger btn-sm" onClick={() => { this.delete(item.Key) }} title="Delete">
+                                                    <button className="btn btn-outline-danger btn-sm my-2" onClick={() => { this.delete(item.Key) }} title="Delete">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" className="bi bi-trash" viewBox="0 0 16 16">
                                                             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z" />
                                                             <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z" />
