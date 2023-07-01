@@ -16,7 +16,6 @@ downloadPhoto.get("/downloadPhoto", (req, res) => {
         Region: 'ap-beijing',
         Key: req.query.name
     }, function (err, data) {
-        console.log(data)
         if (err) {
             res.status(404).send(`Cannot get the document ${req.query.name}`);
         } else {

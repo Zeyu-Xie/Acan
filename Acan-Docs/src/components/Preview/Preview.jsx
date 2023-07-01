@@ -282,7 +282,6 @@ class Preview extends React.Component {
 
     async upload() {
         this.loading()
-        console.log(this.ref3.current.files)
         for (var i = 0; i < this.ref3.current.files.length; i++) {
             var file = this.ref3.current.files[i]
             const formData = new FormData();
