@@ -31,10 +31,10 @@ class Key extends React.Component {
 
     render() {
         return (
-            <div className="card col-11" id="id5">
+            <div className="card flip-in-hor-bottom col-11" id="id5">
                 <div className="card-body">
                     <div className="row justify-content-between align-items-center">
-                        <h5 className="card-title col-6 m-0">Key Generator</h5>
+                        <h5 className="card-title col-6 m-0">Key Generator 🔑</h5>
                         <div className="spinner-border text-success col-6" role="status" style={{ display: "inline-block", visibility: `${this.state.loading_visibility}` }}>
                             <span className="visually-hidden">Loading...</span>
                         </div>

@@ -31,9 +31,9 @@ class Md5 extends React.Component {
 
     render() {
         return (
-            <div className="card col-sm-9 col-md-6 col-lg-5 col-xl-4 col-11" id="id4">
+            <div className="card flip-in-hor-bottom flip-in-hor-bottom col-sm-9 col-md-6 col-lg-5 col-xl-4 col-11" id="id4">
                 <div className="card-body">
-                    <h5 className="card-title">String to MD5</h5>
+                    <h5 className="card-title">String to MD5 🔢</h5>
                     <hr />
                     <div className="input-group">
                         <span className="input-group-text">Source String</span>
