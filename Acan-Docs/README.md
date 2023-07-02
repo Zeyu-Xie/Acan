@@ -7,6 +7,8 @@
 | docName    | 当前展示的文档名                 |
 | is_loading | 是否正在加载（是否显示加载动画） |
 
+----------
+
 ### action
 
 | 名称      | 调用                     | 含义                      |
@@ -14,6 +16,8 @@
 | loading   | ```loading()```          | 进入加载状态              |
 | loaded    | ```loaded()```           | 退出加载状态              |
 | switchDoc | ```switchDoc(docName)``` | 切换至名为 docName 的文档 |
+
+------
 
 ### component
 
