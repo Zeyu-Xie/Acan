@@ -7,7 +7,7 @@ class App extends React.Component {
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-11 col-lg-10 m-4">
-                        <h1><b>Acan Photos 📷</b></h1>
+                        <h1 className="col-5"><b>Acan Photos 📷</b></h1>
                     </div>
                 </div>
                 <div className="row justify-content-center">

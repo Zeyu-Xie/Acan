@@ -15,7 +15,9 @@
     list-style: none;
     position: absolute;
     right: 20px;
-    top: 20px;
+    top: 40px;
+    max-width: 50%;
+    overflow: scroll;
 }
 
 #navbar div {
