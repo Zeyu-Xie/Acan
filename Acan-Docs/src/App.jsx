@@ -2,11 +2,17 @@ import React from "react"
 import ReactDOM from "react-dom"
 
 import Preview from "./components/Preview/Preview"
+import Navbar from "./components/Navbar/Navbar"
+import SpinnerBorder from "./components/SpinnerBorder/SpinnerBorder"
 
 class App extends React.Component {
     render() {
         return (
-            <Preview />
+            <div>
+                <Navbar />
+                <Preview />
+                <SpinnerBorder />
+            </div>
         )
     }
 }

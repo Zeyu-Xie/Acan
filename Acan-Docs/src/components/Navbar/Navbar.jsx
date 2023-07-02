@@ -1,17 +1,35 @@
 import React from "react"
-
+import { connect } from "react-redux"
+import download from "downloadjs"
+import axios from "axios"
+import switchDoc from "../../store/actions/switchDoc"
+import loading from "../../store/actions/loading"
+import loaded from "../../store/actions/loaded"
 import config from "../../config.json"
-
 import "./Navbar.css"
 
 class Navbar extends React.Component {
 
     state = {
         list: null,
-        docName: "Self Introduction.html",
-        content: "",
-        searchText: "",
-        isLoading: false
+        searchText: ""
+    }
+
+    ref2 = React.createRef()
+    ref3 = React.createRef()
+
+    constructor(props) {
+        super(props)
+        this.getList = this.getList.bind(this)
+        this.downloadDoc = this.downloadDoc.bind(this)
+        this.rename = this.rename.bind(this)
+        this.delete = this.delete.bind(this)
+        this.download = this.download.bind(this)
+        this.upload = this.upload.bind(this)
+    }
+
+    componentDidMount() {
+        this.getList()
     }
 
     render() {
@@ -58,11 +76,7 @@ class Navbar extends React.Component {
                                             return (
                                                 <li>
                                                     <a className="dropdown-item" href="#" onClick={() => {
-                                                        this.setState({
-                                                            docName: item.Key,
-                                                        }, () => {
-                                                            this.refresh()
-                                                        })
+                                                        this.props.switchDoc(item.Key)
                                                     }}>{item.Key}
                                                     </a>
                                                 </li>
@@ -93,11 +107,7 @@ class Navbar extends React.Component {
                                             return (
                                                 <li>
                                                     <a className="dropdown-item" href="#" onClick={() => {
-                                                        this.setState({
-                                                            docName: item.Key,
-                                                        }, () => {
-                                                            this.refresh()
-                                                        })
+                                                        this.props.switchDoc(item.Key)
                                                     }}>{item.Key}
                                                     </a>
                                                 </li>
@@ -142,11 +152,7 @@ class Navbar extends React.Component {
                                                     return (
                                                         <li>
                                                             <a className="dropdown-item" href="#" onClick={() => {
-                                                                this.setState({
-                                                                    docName: item.Key,
-                                                                }, () => {
-                                                                    this.refresh()
-                                                                })
+                                                                this.props.switchDoc(item.Key)
                                                             }}>{item.Key}</a>
                                                         </li>
                                                     )
@@ -163,4 +169,101 @@ class Navbar extends React.Component {
             </nav >
         )
     }
+    loading() {
+        this.props.loading()
+    }
+
+    loaded() {
+        this.props.loaded()
+    }
+
+    async getList() {
+        this.loading()
+        await axios(`${config.urls["Acan Server"]}/doc/api/getList`).then(res => {
+            this.setState({
+                list: res.data.Contents
+            })
+        }).catch(err => {
+            console.log("ERROR", err)
+        })
+        this.loaded()
+    }
+
+    async downloadDoc() {
+        this.loading()
+        await axios.get(`${config.urls["Acan Server"]}/doc/content/downloadDoc?name=${this.props.docName}`).catch(err => {
+            console.log("ERROR", err)
+        })
+        this.loaded()
+    }
+
+    async rename() {
+        if (this.props.docName === "Self Introduction.html") {
+            window.alert("Failed to rename because of the default settings.")
+        }
+        else {
+            var str = prompt("Please enter new name")
+            if (str !== null) {
+                this.loading()
+                await axios.get(`${config.urls["Acan Server"]}/doc/api/renameDoc?oldName=${this.props.docName}&newName=${str}`).then(res => {
+                    this.setState({
+                        docName: str
+                    })
+                    this.props.switchDoc(str)
+                }).catch(err => {
+                    console.log("ERROR", err)
+                })
+                this.loaded()
+            }
+        }
+
+    }
+
+    async delete() {
+        if (this.props.docName === "Self Introduction.html") {
+            window.alert("Failed to delete because of the default settings.")
+        }
+        else {
+            const confirmed = window.confirm("Are you sure you want to delete this document?")
+            if (confirmed) {
+                this.loading()
+                await axios.get(`${config.urls["Acan Server"]}/doc/api/deleteDoc?name=${this.props.docName}`).then(res => {
+                    this.setState({
+                        docName: "Self Introduction.html"
+                    })
+                    this.props.switchDoc("Self Introduction.html")
+                })
+                this.loaded()
+            }
+        }
+    }
+
+    download() {
+        axios.get(`${config.urls["Acan Server"]}/doc/content/downloadDoc?name=${this.props.docName}`).then(res => {
+            download(res.data, this.props.docName, "text/html")
+        }).catch(err => {
+            console.log("ERROR", err)
+        })
+    }
+
+    async upload() {
+        this.loading()
+        for (var i = 0; i < this.ref3.current.files.length; i++) {
+            var file = this.ref3.current.files[i]
+            const formData = new FormData();
+            formData.append("file", file);
+            await axios.post(`${config.urls["Acan Server"]}/doc/api/uploadDoc`, formData).catch(err => {
+                console.log("ERROR", err)
+            })
+        }
+        this.loaded()
+    }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        docName: state.docName
+    }
+}
+
+export default connect(mapStateToProps, loaded)(connect(null, loading)(connect(null, switchDoc)(Navbar)))
