@@ -1,5 +1,6 @@
 import React from "react"
 import axios from "axios"
+import { connect } from "react-redux"
 
 import "./RandomUser.css"
 
@@ -73,4 +74,4 @@ class RandomUser extends React.Component {
     }
 }
 
-export default RandomUser
+export default connect(null, loaded)(connect(null, loading)(RandomUser))

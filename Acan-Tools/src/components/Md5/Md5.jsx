@@ -1,6 +1,7 @@
 import React from "react"
 import axios from "axios"
 import ClipboardJS from "clipboard"
+import { connect } from "react-redux"
 
 import config from "../../config.json"
 
@@ -76,4 +77,4 @@ class Md5 extends React.Component {
     }
 }
 
-export default Md5
+export default connect(null, loaded)(connect(null, loading)(Md5))

@@ -1,6 +1,7 @@
 import React from "react"
 import axios from "axios"
 import ClipboardJS from "clipboard"
+import { connect } from "react-redux"
 
 import config from "../../config.json"
 
@@ -82,4 +83,4 @@ class Key extends React.Component {
     }
 }
 
-export default Key
+export default connect(null, loaded)(connect(null, loading)(Key))

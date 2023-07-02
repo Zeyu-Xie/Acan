@@ -1,6 +1,7 @@
 import React from "react"
 import axios from "axios"
 import ClipboardJS from "clipboard"
+import { connect } from "react-redux"
 
 import "./Translate.css"
 
@@ -69,4 +70,4 @@ class Translate extends React.Component {
     }
 }
 
-export default Translate
+export default connect(null, loaded)(connect(null, loading)(Translate))
