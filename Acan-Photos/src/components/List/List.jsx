@@ -106,14 +106,14 @@ class List extends React.Component {
                             </thead>
                             <tbody>
                                 {
-                                    this.state.list.map(item => {
+                                    this.props.list.map(item => {
                                         return (
                                             <tr style={{ verticalAlign: "middle" }}>
                                                 <td>{item.Key}</td>
                                                 <td>{item.LastModified}</td>
                                                 <td>{item.size}</td>
                                                 <td>
-                                                    <button className="btn btn-outline-success btn-sm my-2" title="view" onClick={() => {
+                                                    <button className="btn btn-outline-success btn-sm my-2" title="view" onClick={()=>{
                                                         this.preview(item)
                                                     }}>
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" className="bi bi-eye" viewBox="0 0 16 16">

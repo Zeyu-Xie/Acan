@@ -17,7 +17,7 @@ class Preview extends React.Component {
                 <div id="carouselExampleCaptions" className="carousel slide">
                     <div className="carousel-indicators">
                         {
-                            this.props.list.map((item, index) => {
+                            (this.props.list) ? (this.props.list.map((item, index) => {
                                 if (item.Key === this.props.imageName) {
                                     return (
                                         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to={index} className="active" aria-current="true" aria-label={`Slide ${index + 1}`}></button>
@@ -28,33 +28,34 @@ class Preview extends React.Component {
                                         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to={index} aria-label={`Slide ${index + 1}`}></button>
                                     )
                                 }
-                            })
+                            })) : (null)
                         }
                     </div>
                     <div className="carousel-inner">
                         {
-                            this.props.list.map((item, index) => {
-                                if (item.Key === this.props.imageName) {
-                                    return (
-                                        <div className="carousel-item active">
-                                            <img src={`${config.urls["Acan Server"]}/photo/api/previewPhoto?name=${item.Key}`} alt={item.Key} />
-                                            <div className="carousel-caption d-none d-md-block">
-                                                <h5>{item.Key}</h5>
+                            (this.props.list) ? (
+                                this.props.list.map((item, index) => {
+                                    if (item.Key === this.props.imageName) {
+                                        return (
+                                            <div className="carousel-item active">
+                                                <img src={`${config.urls["Acan Server"]}/photo/api/previewPhoto?name=${item.Key}`} alt={item.Key} />
+                                                <div className="carousel-caption d-none d-md-block">
+                                                    <h5>{item.Key}</h5>
+                                                </div>
                                             </div>
-                                        </div>
-                                    )
-                                }
-                                else {
-                                    return (
-                                        <div className="carousel-item">
-                                            <img src={`${config.urls["Acan Server"]}/photo/api/previewPhoto?name=${item.Key}`} alt={item.Key} />
-                                            <div className="carousel-caption d-none d-md-block" style={{ color: "white", zIndex: "2" }}>
-                                                <h5>{item.Key}</h5>
+                                        )
+                                    }
+                                    else {
+                                        return (
+                                            <div className="carousel-item">
+                                                <img src={`${config.urls["Acan Server"]}/photo/api/previewPhoto?name=${item.Key}`} alt={item.Key} />
+                                                <div className="carousel-caption d-none d-md-block" style={{ color: "white", zIndex: "2" }}>
+                                                    <h5>{item.Key}</h5>
+                                                </div>
                                             </div>
-                                        </div>
-                                    )
-                                }
-                            })
+                                        )
+                                    }
+                                })) : (null)
                         }
                     </div>
                     <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
