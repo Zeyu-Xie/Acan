@@ -7,7 +7,8 @@
     position: absolute;
     height: fit-content;
     background-color: rgba(255,255 , 255, 0.4);
-    max-width: 50rem;
+    max-width: 40rem;
+    overflow: scroll;
     backdrop-filter: blur(6px);
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.15);
 }
@@ -16,6 +17,9 @@
     background-color: rgba(255,255 , 255, 0.4);
 }
 
+#id5>.card-body {
+    min-width: 30rem;
+}
 
 .flip-in-hor-bottom {
     -webkit-animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;

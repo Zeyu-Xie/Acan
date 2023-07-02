@@ -1,5 +1,6 @@
 #id2 {
     background-color: rgba(255,255 , 255, 0.4);
+    overflow: scroll;
     margin: auto;
     left: 0;
     right: 0;
@@ -16,6 +17,13 @@
     background-color: rgba(255,255 , 255, 0)
 }
 
+#id2>.row {
+    width: 50rem;
+}
+
+#randomUser-sidePhoto {
+    margin: auto;
+}
 
 .flip-in-hor-bottom {
     -webkit-animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;

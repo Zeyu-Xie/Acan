@@ -19,8 +19,8 @@ class RandomUser extends React.Component {
         return (
             <div className="card flip-in-hor-bottom col-11" id="id2">
                 <div className="row">
-                    <div className="col-4">
-                        <img src="https://s2.loli.net/2023/05/24/1PbaHkIGFSoBMvT.png" className="img-fluid rounded-start" alt="Random User" />
+                    <div id="randomUser-sidePhotoContainer" className="row col-4">
+                        <img id="randomUser-sidePhoto" src="https://s2.loli.net/2023/05/24/1PbaHkIGFSoBMvT.png" className="col-12" alt="Random User" />
                     </div>
                     <div className="col-8">
                         <div className="card-body">
