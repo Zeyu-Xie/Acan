@@ -1,6 +1,6 @@
 function preview(dispatch) {
     return {
-        preview: (list) => dispatch({ type: "PREVIEW", isPreview: true, list: list })
+        preview: () => dispatch({ type: "PREVIEW", isPreview: true  })
     }
 }
 

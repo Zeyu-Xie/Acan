@@ -1,5 +1,6 @@
 import React from "react"
 import List from "./components/List/List"
+import SpinnerBorder from "./components/SpinnerBorder/SpinnerBorder"
 
 class App extends React.Component {
     render() {
@@ -13,6 +14,7 @@ class App extends React.Component {
                 <div className="row justify-content-center">
                     <List />
                 </div>
+                <SpinnerBorder />
             </div>
         )
     }

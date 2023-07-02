@@ -9,6 +9,10 @@ import "./List.css"
 import Preview from "../Preview/Preview"
 
 import preview from "../../store/actions/preview"
+import switchImage from "../../store/actions/switchImage"
+import loading from "../../store/actions/loading"
+import loaded from "../../store/actions/loaded"
+import setList from "../../store/actions/setList"
 
 class List extends React.Component {
 
@@ -28,6 +32,15 @@ class List extends React.Component {
         super(props)
         this.getList = this.getList.bind(this)
         this.rename = this.rename.bind(this)
+        this.upload = this.upload.bind(this)
+        this.delete = this.delete.bind(this)
+        this.import = this.import.bind(this)
+        this.preview = this.preview.bind(this)
+        this.sortByName = this.sortByName.bind(this)
+        this.sortByDate = this.sortByDate.bind(this)
+        this.sortBySize = this.sortBySize.bind(this)
+        this.loading = this.loading.bind(this)
+        this.loaded = this.loaded.bind(this)
     }
 
     componentDidMount() {
@@ -182,10 +195,7 @@ class List extends React.Component {
 
                 </div>
                 {
-                    this.props.isPreview ? <Preview imageName={this.state.imageName} /> : null
-                }
-                {
-                    this.state.isLoading ? (<div className="spinner-border text-secondary" role="status"><span className="visually-hidden">Loading...</span></div>) : null
+                    this.props.isPreview ? <Preview /> : null
                 }
             </div>
 
@@ -193,41 +203,34 @@ class List extends React.Component {
     }
 
     loading() {
-        this.setState({
-            isLoading: true
-        })
+        this.props.loading()
     }
 
     loaded() {
-        this.setState({
-            isLoading: false
-        })
+        this.props.loaded()
     }
 
     async getList() {
         this.loading()
         await axios.get(`${config.urls["Acan Server"]}/photo/api/getList`).then(res => {
-            this.setState({
-                list: res.data.data
-            }, () => {
-                switch (this.ref3.current.value) {
-                    case "Name": {
-                        this.setState({ list: this.state.list.sort(this.sortByName) })
-                        break
-                    }
-                    case "Date": {
-                        this.setState({ list: this.state.list.sort(this.sortByDate) })
-                        break
-                    }
-                    case "Size": {
-                        this.setState({ list: this.state.list.sort(this.sortBySize) })
-                        break
-                    }
-                    default: {
-                        break
-                    }
+            this.props.setList(res.data.data)
+            switch (this.ref3.current.value) {
+                case "Name": {
+                    this.props.setList(this.props.list.sort(this.sortByName))
+                    break
                 }
-            })
+                case "Date": {
+                    this.props.setList(this.props.list.sort(this.sortByDate))
+                    break
+                }
+                case "Size": {
+                    this.props.setList(this.props.list.sort(this.sortBySize))
+                    break
+                }
+                default: {
+                    break
+                }
+            }
         }).catch(err => {
             console.log("ERROR", err)
         })
@@ -293,10 +296,8 @@ class List extends React.Component {
 
     async preview(item) {
         this.loading()
-        this.setState({
-            imageName: item.Key
-        })
-        this.props.preview(this.state.list)
+        this.props.switchImage(item.Key)
+        this.props.preview()
         this.loaded()
     }
 
@@ -338,8 +339,11 @@ class List extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        isPreview: state.isPreview
+        list: state.list,
+        isPreview: state.isPreview,
+        isLoading: state.isLoading,
+        imageName: state.imageName
     }
 }
 
-export default connect(mapStateToProps, preview)(List)
+export default connect(mapStateToProps, preview)(connect(null, switchImage)(connect(null, loading)(connect(null, loaded)(connect(null, setList)(List)))))
