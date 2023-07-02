@@ -1,7 +1,9 @@
 import React from "react"
 import { connect } from "react-redux"
-import loading from "../../../../Acan-Docs/src/store/actions/loading"
-import loaded from "../../../../Acan-Docs/src/store/actions/loaded"
+import loading from "../../store/actions/loading"
+import loaded from "../../store/actions/loaded"
+import config from "../../config.json"
+import switchTool from "../../store/actions/switchTool"
 
 class Navbar extends React.Component {
     render() {
@@ -39,15 +41,11 @@ class Navbar extends React.Component {
                                 </a>
                                 <ul className="dropdown-menu">
                                     {
-                                        (this.state.toolList) ? (this.state.toolList.map((item, index) => {
+                                        (config.others.toolList) ? (config.others.toolList.map((item, index) => {
                                             return (
                                                 <li>
                                                     <a className="dropdown-item" href="#" onClick={() => {
-                                                        this.setState({
-                                                            toolName: item
-                                                        }, () => {
-                                                            this.refresh()
-                                                        })
+                                                        this.props.switchTool(item)
                                                     }}>{item}
                                                     </a>
                                                 </li>
@@ -56,12 +54,6 @@ class Navbar extends React.Component {
                                     }
                                 </ul>
                             </li>
-
-
-
-
-
-
 
                         </ul>
 
@@ -83,4 +75,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, loaded)(connect(null, loading)(Navbar))
+export default connect(mapStateToProps, switchTool)(connect(null, loaded)(connect(null, loading)(Navbar)))

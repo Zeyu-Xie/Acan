@@ -1,6 +1,8 @@
 import React from "react"
 import axios from "axios"
 import { connect } from "react-redux"
+import loading from "../../store/actions/loading"
+import loaded from "../../store/actions/loaded"
 
 import "./RandomUser.css"
 

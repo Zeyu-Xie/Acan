@@ -1,5 +1,5 @@
 const initState = {
-    toolName: "",
+    toolName: "RandomUser",
     isLoading: false,
 }
 

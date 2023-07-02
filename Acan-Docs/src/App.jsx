@@ -1,5 +1,4 @@
 import React from "react"
-import ReactDOM from "react-dom"
 
 import Preview from "./components/Preview/Preview"
 import Navbar from "./components/Navbar/Navbar"
