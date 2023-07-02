@@ -1,5 +1,4 @@
 import React from "react"
-import ReactDOM from "react-dom"
 import axios from "axios"
 import download from "downloadjs"
 
@@ -52,19 +51,19 @@ class Preview extends React.Component {
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
                                 <li className="nav-item">
-                                    <a className="nav-link" href="http://acanxie.com/page/home">Home</a>
+                                    <a className="nav-link" href={`${config.urls["Acan Server"]}/page/home`}>Home</a>
                                 </li>
 
                                 <li className="nav-item">
-                                    <a className="nav-link" href="http://acanxie.com/page/doc">Docs</a>
+                                    <a className="nav-link" href={`${config.urls["Acan Server"]}/page/doc`}>Docs</a>
                                 </li>
 
                                 <li className="nav-item">
-                                    <a className="nav-link" href="http://acanxie.com/page/photo">Photos</a>
+                                    <a className="nav-link" href={`${config.urls["Acan Server"]}/page/photo`}>Photos</a>
                                 </li>
 
                                 <li className="nav-item">
-                                    <a className="nav-link" href="http://acanxie.com/page/tool">Tools</a>
+                                    <a className="nav-link" href={`${config.urls["Acan Server"]}/page/tool`}>Tools</a>
                                 </li>
                             </ul>
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
