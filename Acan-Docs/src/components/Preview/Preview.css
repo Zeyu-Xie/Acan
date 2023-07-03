@@ -1,5 +1,10 @@
 * {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Courier New', fac;
+}
+
+@font-face {
+    font-family: fac;
+    src: url("../../HanYiXiDengXianJian-1.ttf");
 }
 
 #preview-content .container {
