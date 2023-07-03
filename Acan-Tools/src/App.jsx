@@ -22,7 +22,7 @@ class App extends React.Component {
 
     render() {
         return (
-            <div className="container-fluid align-items-center" style={{ height: "100vh" }}>
+            <div className="container-fluid" style={{ height: "100vh" }}>
                 <Navbar />
                 {
                     (this.props.toolName) ? (

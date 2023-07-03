@@ -34,7 +34,7 @@ class Key extends React.Component {
 
     render() {
         return (
-            <div className="card flip-in-hor-bottom col-11" id="id5">
+            <div className="card flip-in-hor-bottom col-11" id="card-key">
                 <div className="card-body">
                     <div className="row justify-content-between align-items-center">
                         <h5 className="card-title col-6 m-0">Key Generator 🔑</h5>

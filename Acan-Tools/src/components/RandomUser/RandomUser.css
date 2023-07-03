@@ -1,27 +1,30 @@
-#id2 {
-    background-color: rgba(255,255 , 255, 0.4);
-    overflow: scroll;
-    margin: auto;
+#card-randomUser {
+    position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
-    position: absolute;
+
+    margin: auto;
+
+    overflow: scroll;
+
     height: fit-content;
     max-width: 50rem;
+
+    background-color: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(6px);
-    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.15);
 }
 
-#id2 * {
-    background-color: rgba(255,255 , 255, 0)
+#card-randomUser * {
+    background-color: rgba(255, 255, 255, 0)
 }
 
-#id2>.row {
+#card-randomUser>.row {
     width: 50rem;
 }
 
-#randomUser-sidePhoto {
+#card-randomUser #side-photo {
     margin: auto;
 }
 

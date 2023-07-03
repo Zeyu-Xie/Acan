@@ -20,6 +20,11 @@ class Translate extends React.Component {
     q = React.createRef()
     copy_btn = React.createRef()
 
+    constructor(props) {
+        super(props)
+        this.submitTranslate = this.submitTranslate.bind(this)
+    }
+
     componentDidMount() {
         this.clipboard = new ClipboardJS(this.copy_btn.current, {
             text: () => this.state.translation
@@ -28,17 +33,17 @@ class Translate extends React.Component {
 
     render() {
         return (
-            <div className="card flip-in-hor-bottom col-sm-9 col-md-6 col-lg-5 col-xl-4 col-11" id="id1">
+            <div className="card flip-in-hor-bottom col-sm-9 col-md-6 col-lg-5 col-xl-4 col-11" id="card-translate">
                 <div className="card-body">
                     <h5 className="card-title">Translate 💬</h5>
                     <hr />
                     <div className="input-group">
                         <span className="input-group-text">Source Text</span>
-                        <textarea className="form-control" aria-label="Source Text" ref={this.q} onChange={this.submitTranslate} style={{backgroundColor: "rgba(255,255,255,0.4)"}}></textarea>
+                        <textarea className="form-control" aria-label="Source Text" ref={this.q} onChange={this.submitTranslate}></textarea>
                     </div>
                     <hr />
                     <p className="card-text"><b>Translation: </b></p>
-                    <p className="card-text">{this.state.translation} <button className="btn btn-outline-secondary btn-sm" ref={this.copy_btn} style={{ visibility: this.state.copy_btn_visibility, float: "right" }}>Copy</button> <br /> </p>
+                    <p className="card-text">{this.state.translation} <button id="copy-button" className="btn btn-outline-secondary btn-sm" ref={this.copy_btn} style={{ visibility: this.state.copy_btn_visibility }}>Copy</button> <br /> </p>
                 </div>
             </div>
         )

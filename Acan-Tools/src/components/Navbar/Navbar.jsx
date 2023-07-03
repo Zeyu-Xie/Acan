@@ -5,10 +5,12 @@ import loaded from "../../store/actions/loaded"
 import config from "../../config.json"
 import switchTool from "../../store/actions/switchTool"
 
+import "./Navbar.css"
+
 class Navbar extends React.Component {
     render() {
         return (
-            <nav className="navbar navbar-expand-lg bg-body-tertiary" style={{ zIndex: "10" }}>
+            <nav id="top-nav" className="navbar navbar-expand-lg bg-body-tertiary">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="#">Acan-Tools 🔧</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,9 +31,6 @@ class Navbar extends React.Component {
                                 <a className="nav-link" href={`${config.urls["Acan Server"]}/page/tool`}><b>Tool</b></a>
                             </li>
                         </ul>
-
-
-
 
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 

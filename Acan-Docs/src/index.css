@@ -1,16 +1,10 @@
 * {
-    font-family: 'Courier New', fac, fac-bold, monospace;
+    font-family: 'Courier New', fac;
 }
 
 @font-face {
     font-family: fac;
     src: url("./fonts/HanYiXiDengXianJian.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: fac-bold;
-    src: url("./fonts/HanYiZhongDengXianJian.ttf") format("truetype");
-    font-weight: bold;
 }
 
 body {

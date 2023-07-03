@@ -1,20 +1,24 @@
-* {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-#id1 {
-    background-color: rgba(255, 255, 255, 0.5);
+#card-translate {
+    position: absolute;
     margin: auto;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
-    position: absolute;
+
     height: fit-content;
+
+    background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(6px);
-    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.15);
 }
 
+#card-translate textarea {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+#copy-button {
+    float: right;
+}
 
 .flip-in-hor-bottom {
     -webkit-animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
