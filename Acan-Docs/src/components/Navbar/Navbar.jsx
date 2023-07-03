@@ -15,8 +15,8 @@ class Navbar extends React.Component {
         searchText: ""
     }
 
+    ref1 = React.createRef()
     ref2 = React.createRef()
-    ref3 = React.createRef()
 
     constructor(props) {
         super(props)
@@ -34,9 +34,9 @@ class Navbar extends React.Component {
 
     render() {
         return (
-            <nav className="navbar navbar-expand-lg">
+            <nav id="top-nav" className="navbar navbar-expand-lg">
                 <div className="container-fluid">
-                    <a className="navbar-brand mx-4 py-2" href="#">
+                    <a className="navbar-brand" href="#">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-file-earmark-text" viewBox="0 0 16 16">
                             <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
                             <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
@@ -125,7 +125,7 @@ class Navbar extends React.Component {
                                     <li>
                                         <div className="input-group" style={{ width: "max-content" }}>
                                             &nbsp;&nbsp;
-                                            <input type="file" className="form-control" multiple ref={this.ref3} />
+                                            <input type="file" className="form-control" multiple ref={this.ref2} />
                                             <label className="input-group-text" onClick={this.upload}>Upload ⏫</label>
                                             &nbsp;&nbsp;
                                         </div>
@@ -135,9 +135,9 @@ class Navbar extends React.Component {
 
                         </ul>
                         <form className="d-flex" role="search">
-                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" ref={this.ref2} onChange={() => {
+                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" ref={this.ref1} onChange={() => {
                                 this.setState({
-                                    searchText: this.ref2.current.value
+                                    searchText: this.ref1.current.value
                                 })
                             }} />
                             <div className="dropdown">
@@ -248,8 +248,8 @@ class Navbar extends React.Component {
 
     async upload() {
         this.loading()
-        for (var i = 0; i < this.ref3.current.files.length; i++) {
-            var file = this.ref3.current.files[i]
+        for (var i = 0; i < this.ref2.current.files.length; i++) {
+            var file = this.ref2.current.files[i]
             const formData = new FormData();
             formData.append("file", file);
             await axios.post(`${config.urls["Acan Server"]}/doc/api/uploadDoc`, formData).catch(err => {

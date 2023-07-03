@@ -44,6 +44,8 @@ class Preview extends React.Component {
             this.setState({
                 content: res.data.data
             })
+        }).catch(err => {
+            console.log("ERROR", err)
         })
     }
 }

@@ -1,17 +1,5 @@
 {
     "urls": {
         "Acan Server": "http://acanxie.com"
-    },
-    "apiKeys": {
-        "tencentDeveloper": {
-            "secretId": "AKIDrY2oMgmdGfqmTwAAKGyRffQxFJ8j5dw1",
-            "secretKey": "sWv62kFWZOL3Xmna8RWMyMWqwnPnxsY0"
-        }
-    },
-    "others": {
-        "tencentDeveloper": {
-            "Bucket": "acandocs-1312302448",
-            "Region": "ap-beijing"
-        }
     }
 }
