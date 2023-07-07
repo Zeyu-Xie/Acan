@@ -1,4 +1,4 @@
-# ACANXIE.COM v1.0.0
+# ACANXIE.COM v2.0.0
 
 ### 功能
 
@@ -16,11 +16,16 @@ ACANXIE.COM 项目的配套图床，提供 API，支持在其它项目中使用�
 
 目前支持的工具有：
 
-- Key：生成随机的公钥-私钥对🔑，目前支持的加密算法有：rsa、ecc、dsa、ed25519
+- Key：生成随机的公钥-私钥对 🔑，目前支持的加密算法有：rsa、ecc、dsa、ed25519
 - Translate：简易英译中翻译工具
 - Md5：字符串的 md5 码计算器，输出32位和16位 md5 码
 - Random Password：输入长度，生成四种类型的随机密码，分别为默认、无数字、无特殊符号、仅字母
 - Random User：随机用户❓生成器，随机生成姓名、地址、邮箱等虚拟用户信息
+- Weather：天气组件，使用精灵图实现了天气 ☁️ 状态可视化，目前共支持纽约 🗽、东京 🗼 等 17 个城市。🌆
+
+#### Acan Users 🧑‍💻
+
+用户管理模块，目前支持注册账户、登录账户、退出登录等操作，登录鉴权方式为 Json Web Token，因此需要允许浏览器创建及访问 Cookie。由于安全 🔐 问题，已将 Acan Docs、Acan Photos、Acan Tools 三模块设置为仅注册用户访问。
 
 ### 部署方法
 
@@ -58,9 +63,9 @@ ACANXIE.COM 项目的配套图床，提供 API，支持在其它项目中使用�
 
 ### 版本
 
-版本号：v1.0.0
+版本号：v2.0.0
 
-发布时间：Tue Jul 4 00:10:52 CST 2023
+发布时间：Fri Jul 7 23:13:21 CST 2023
 
 贡献者：[Zeyu-Xie](https://github.com/Zeyu-Xie)
 
