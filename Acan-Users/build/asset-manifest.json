@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a49da8db.css",
+    "main.js": "/static/js/main.b7f8eccd.js",
+    "static/media/darkForest.png": "/static/media/darkForest.11ff051d321037d6d151.png",
+    "index.html": "/index.html",
+    "main.a49da8db.css.map": "/static/css/main.a49da8db.css.map",
+    "main.b7f8eccd.js.map": "/static/js/main.b7f8eccd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a49da8db.css",
+    "static/js/main.b7f8eccd.js"
+  ]
+}

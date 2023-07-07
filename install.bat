@@ -1,7 +1,7 @@
 @echo off
 
-set "DIRS=Acan-Photos Acan-Tools Acan-Docs Acan-Home Acan-Server/Doc Acan-Server/Tool Acan-Server/Photo Acan-Server"
-set "BUILD_DIRS=Acan-Photos Acan-Tools Acan-Docs Acan-Home"
+set "DIRS=Acan-Photos Acan-Tools Acan-Docs Acan-Home Acan-Users Acan-Server/Doc Acan-Server/Tool Acan-Server/Photo Acan-Server/user Acan-Server"
+set "BUILD_DIRS=Acan-Photos Acan-Tools Acan-Docs Acan-Home Acan-Users"
 
 if "%~1"=="build" (
     call :build

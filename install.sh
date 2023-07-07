@@ -1,7 +1,7 @@
 #!/bin/bash
 
-DIRS=("Acan-Photos" "Acan-Tools" "Acan-Docs" "Acan-Home" "Acan-Server/Doc" "Acan-Server/Tool" "Acan-Server/Photo" "Acan-Server")
-BUILD_DIRS=("Acan-Photos" "Acan-Tools" "Acan-Docs" "Acan-Home")
+DIRS=("Acan-Photos" "Acan-Tools" "Acan-Docs" "Acan-Home" "Acan-Users" "Acan-Server/Doc" "Acan-Server/Tool" "Acan-Server/Photo" "Acan-Server/user" "Acan-Server")
+BUILD_DIRS=("Acan-Photos" "Acan-Tools" "Acan-Docs" "Acan-Home" "Acan-Users")
 
 all() {
     install
