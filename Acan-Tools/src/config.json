@@ -1,6 +1,6 @@
 {
     "urls": {
-        "Acan Server": "http://acanxie.com"
+        "Acan Server": "http://localhost"
     },
     "others": {
         "toolList": [
@@ -8,7 +8,8 @@
             "Key",
             "Md5",
             "RandomUser",
-            "RandomPassword"
+            "RandomPassword",
+            "Weather"
         ]
     }
 }

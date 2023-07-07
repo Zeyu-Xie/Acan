@@ -5,6 +5,7 @@ import RandomUser from "./components/RandomUser/RandomUser";
 import RandomPassword from "./components/RandomPassword/RandomPassword";
 import Md5 from "./components/Md5/Md5";
 import Key from "./components/Key/Key";
+import Weather from "./components/Weather/Weather";
 
 import "./App.css"
 import Navbar from "./components/Navbar/Navbar";
@@ -48,6 +49,11 @@ class App extends React.Component {
                     (this.props.toolName) ? (
                         (this.props.toolName === "Key") ? (<Key />) : null
                     ) : (null)
+                }
+                {
+                    (this.props.toolName) ? (
+                        (this.props.toolName === "Weather") ? (<Weather />) : null
+                    ) : null
                 }
                 {
                     this.props.isLoading ? (<div className="spinner-border text-secondary" role="status"><span className="visually-hidden">Loading...</span></div>) : null

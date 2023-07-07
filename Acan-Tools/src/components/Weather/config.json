@@ -1,0 +1,27 @@
+{
+    "locationList": [
+        "Beijing",
+        "Shanghai",
+        "Hong Kong",
+        "New York",
+        "San Francisco",
+        "Sydney",
+        "Tronto",
+        "London",
+        "Paris",
+        "Stockholm",
+        "Oslo",
+        "Helsinki",
+        "Tokyo",
+        "Osaka",
+        "Seoul",
+        "Singapore",
+        "Kiev"
+    ],
+    "urls": {
+        "weather-api": "http://api.weatherapi.com/v1/current.json"
+    },
+    "api-keys": {
+        "weather-api": "b4ae6d02601041b3b67152932231105"
+    }
+}
