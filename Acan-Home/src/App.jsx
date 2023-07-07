@@ -50,6 +50,12 @@ class App extends React.Component {
                                     </a>
                                 </li>
 
+                                <li className="nav-item">
+                                    <a className="nav-link" href={`${config.urls["Acan Server"]}/page/user`} role="button" aria-haspopup="true" aria-expanded="false">
+                                        User
+                                    </a>
+                                </li>
+
                                 <li className="nav-item-divider">
                                     <span className="nav-link">
                                         <span></span>

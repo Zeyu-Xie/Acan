@@ -2,6 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 
 import switchOnDisplayName from "../../store/actions/switchOnDisplayName"
+import config from "../../config.json"
 
 import "./Navbar.css"
 
@@ -9,6 +10,7 @@ class Navbar extends React.Component {
 
     btn_Start=React.createRef()
     btn_Settings=React.createRef()
+    btn_Home=React.createRef()
 
     componentDidMount() {
         this.btn_Start.current.addEventListener("click", () => {
@@ -16,6 +18,9 @@ class Navbar extends React.Component {
         })
         this.btn_Settings.current.addEventListener("click", () => {
             this.props.switchOnDisplayName("Settings")
+        })
+        this.btn_Home.current.addEventListener("click",()=>{
+            window.location.href=`${config.urls["Acan-User-Server"]}/page/home`
         })
     }
 
@@ -40,6 +45,9 @@ class Navbar extends React.Component {
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#" ref={this.btn_Settings}>Settings ⚙️ |</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#" ref={this.btn_Home}>Home 🏠 |</a>
                             </li>
                         </ul>
                         <form className="d-flex" role="search">

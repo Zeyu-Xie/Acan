@@ -5,9 +5,11 @@ const config = require("../../../config.json")
 
 const MongoClient = mongodb.MongoClient
 
-const authenticateToken = (req, res, next) => {
+const authenticateTokenByCookie = (req, res, next) => {
 
-    const token = req.headers.token
+    const token=req.cookies["token"]
+    const username=req.cookies["username"]
+
     if (!token) {
         return res.status(401).send("Unauthorized: " + "Token Not Found")
     }
@@ -15,7 +17,7 @@ const authenticateToken = (req, res, next) => {
         if (err) {
             return res.status(401).send("Unauthorized: " + "Invalid Token")
         }
-        if (user.username !== req.query.username) {
+        if (user.username !== username) {
             return res.status(401).send("Unauthorized: " + "Username and Token do not Match")
         }
 
@@ -34,4 +36,4 @@ const authenticateToken = (req, res, next) => {
     })
 }
 
-module.exports = authenticateToken
+module.exports = authenticateTokenByCookie
