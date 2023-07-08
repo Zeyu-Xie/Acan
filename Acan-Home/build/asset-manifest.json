@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.ade34fc2.css",
-    "main.js": "/static/js/main.faa2220d.js",
-    "static/media/darkForest.png": "/static/media/darkForest.11ff051d321037d6d151.png",
+    "main.css": "/static/css/main.76e10e54.css",
+    "main.js": "/static/js/main.e0c83c13.js",
+    "static/media/cafe.jpg": "/static/media/cafe.58e3e92ed676e31d27fb.jpg",
     "index.html": "/index.html",
-    "main.ade34fc2.css.map": "/static/css/main.ade34fc2.css.map",
-    "main.faa2220d.js.map": "/static/js/main.faa2220d.js.map"
+    "main.76e10e54.css.map": "/static/css/main.76e10e54.css.map",
+    "main.e0c83c13.js.map": "/static/js/main.e0c83c13.js.map"
   },
   "entrypoints": [
-    "static/css/main.ade34fc2.css",
-    "static/js/main.faa2220d.js"
+    "static/css/main.76e10e54.css",
+    "static/js/main.e0c83c13.js"
   ]
 }
