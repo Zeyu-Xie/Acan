@@ -1,3 +1,45 @@
+body {
+    width: 100vw;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+#central-header-box {
+    padding-right: var(--wp--preset--spacing--50);
+    padding-left: var(--wp--preset--spacing--50);
+}
+
+#central-header {
+    font-size: max(48px, 5.5vw);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 0.9;
+}
+
+#central-quote {
+    padding-right: var(--wp--preset--spacing--50);
+    padding-left: var(--wp--preset--spacing--50);
+    flex-basis: 67%;
+}
+
+#unknown-block {
+    padding-right: var(--wp--preset--spacing--50);
+    padding-left: var(--wp--preset--spacing--50);
+    flex-basis: 33%;
+}
+
+#central-padding {
+    height: 5rem;
+}
+
+#footer-title {
+    width: max-content;
+}
+
+#footer-contact {
+    width: max-content;
+}
+
 .wp-block-image img {
     box-sizing: border-box;
     height: auto;
