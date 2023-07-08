@@ -1,0 +1,23 @@
+#settings {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+
+    height: max-content;
+    max-height: 24rem;
+    max-width: 40rem;
+
+    background: none;
+    backdrop-filter: blur(10px);
+
+    overflow: scroll;
+    scroll-behavior: smooth;
+}
+
+#settings #btn-delete-account {
+    color: red;
+}
