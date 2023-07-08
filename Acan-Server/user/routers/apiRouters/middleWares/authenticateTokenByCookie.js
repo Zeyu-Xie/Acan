@@ -11,14 +11,14 @@ const authenticateTokenByCookie = (req, res, next) => {
     const username=req.cookies["username"]
 
     if (!token) {
-        return res.status(401).send("Unauthorized: " + "Token Not Found")
+        return res.status(401).redirect(`${config.urls["Acan-User"]}/page/user?redirect=${req.originalUrl}&status=401&message=Unauthorized: Token Not Found`)
     }
     jwt.verify(token, config.apiKeys["Acan-User"].secretKey, async (err, user) => {
         if (err) {
-            return res.status(401).send("Unauthorized: " + "Invalid Token")
+            return res.status(401).redirect(`${config.urls["Acan-User"]}/page/user?redirect=${req.originalUrl}&status=401&message=Unauthorized: Invalid Token`)
         }
         if (user.username !== username) {
-            return res.status(401).send("Unauthorized: " + "Username and Token do not Match")
+            return res.status(401).redirect(`${config.urls["Acan-User"]}/page/user?redirect=${req.originalUrl}&status=401&message=Unauthorized: Username and Token do not Match`)
         }
 
         const client = await MongoClient.connect(config.urls.database["read-only"])
@@ -28,7 +28,7 @@ const authenticateTokenByCookie = (req, res, next) => {
         client.close()
 
         if (list.length === 0) {
-            return res.status(401).send("Unauthorized: " + "User Not Found")
+            return res.status(401).redirect(`${config.urls["Acan-User"]}/page/user?redirect=${req.originalUrl}&status=401&message=Unauthorized: User Not Found`)
         }
 
         next()

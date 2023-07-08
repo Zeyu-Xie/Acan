@@ -1,9 +1,8 @@
 const express = require("express")
 const mongodb = require("mongodb")
 
-const authenticateToken = require("../middleWares/authenticateToken")
-
 const config = require("../../../config.json")
+const authenticateToken = require("../middleWares/authenticateToken")
 
 const MongoClient = mongodb.MongoClient
 

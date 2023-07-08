@@ -6,6 +6,7 @@
         }
     },
     "urls": {
+        "Acan-User": "http://localhost",
         "database": {
             "read-only": "mongodb+srv://acan_read_only:log242log392sin1@data.pi3hwjm.mongodb.net/data",
             "read-and-write": "mongodb+srv://acan_read_and_write:log242log392sin1@data.pi3hwjm.mongodb.net/data"

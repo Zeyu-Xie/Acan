@@ -1,15 +1,42 @@
 import React from "react"
+import Cookies from "js-cookie"
+import axios from "axios"
 
 import "./Start.css"
+
+import config from "../../config.json"
 
 import { connect } from "react-redux"
 
 import Login from "./Login/Login"
 import SignUp from "./SignUp/SignUp"
 import Logined from "./Logined/Logined"
-import SpinnerBorder from "../SpinnerBorder/SpinnerBorder"
+import switchStartFrom from "../../store/actions/switchStartFrom"
+import loading from "../../store/actions/loading"
+import loaded from "../../store/actions/loaded"
 
 class Start extends React.Component {
+
+    async componentDidMount() {
+        const username = Cookies.get("username")
+        const token = Cookies.get("token")
+        if (!username || !token) {
+            this.props.switchStartFrom("Login")
+            return
+        }
+        this.props.loading()
+        await axios.get(`${config.urls["Acan-User-Server"]}/api/getAccountStatus?username=${username}`,{
+            headers: {
+                token: token
+            }
+        }).then(res => {
+            this.props.switchStartFrom("Logined")
+        }).catch(err => {
+            this.props.switchStartFrom("Login")
+        })
+        this.props.loaded()
+    }
+
     render() {
         return (
             <div>
@@ -35,4 +62,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(Start)
+export default connect(mapStateToProps, switchStartFrom)(connect(null, loading)(connect(null, loaded)(Start)))
