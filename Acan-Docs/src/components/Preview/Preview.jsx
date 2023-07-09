@@ -31,7 +31,7 @@ class Preview extends React.Component {
         return (
             <div>
                 <div id="preview-content" className="py-4 px-3">
-                    <div className="container py-4 px-md-5 px-4" ref={this.ref1}>
+                    <div className="container py-4 px-md-5 px-4 col-11 col-sm-10 col-md-9 col-lg-7 col-xxl-6" ref={this.ref1}>
                         <div dangerouslySetInnerHTML={{ __html: this.state.content }}></div>
                     </div>
                 </div>
