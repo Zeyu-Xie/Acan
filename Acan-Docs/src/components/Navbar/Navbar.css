@@ -1,0 +1,4 @@
+#top-nav {
+    backdrop-filter: blur(6px);
+    z-index: 10;
+}
